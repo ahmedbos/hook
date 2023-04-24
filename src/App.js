@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import Add from './Add.js';
 import './App.css';
+import MovieList from './movielist.js';
 
 function App() {
+  const [movies, setMovies] = useState([
+    {Title:'Avengers',posterUrl:'https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg'
+                            ,rate:'5',description:'very good' }
+    ,{Title:'Avengers',posterUrl:'https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg'
+    ,rate:'5',description:'very good'}
+    ,{Title:'Avengers',posterUrl:'https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg'
+    ,rate:'5',description:'very good'},{Title:'Avengers',posterUrl:'https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg'
+    ,rate:'5',description:'very good'}
+  ]);
+  
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <h1 style={{textAlign:'center',fontSize:100 }}>hallo</h1>
+      <div> <MovieList movies={movies} setMovies={setMovies}/></div>
+      <Add movies={movies} />
     </div>
   );
 }
